@@ -5,9 +5,20 @@ import './Article.css';
  * Acts as a link to detailed view
  * @returns Article w/ relavant content
  */
-function Article() {
+
+type ArticleProps = {
+  byline: string;
+  title: string;
+  date: string;
+  link: string;
+}
+function Article({byline, title, date, link}: ArticleProps) {
   return (
-    <div className="">
+    <div className="article">
+      <h3>{title}</h3>
+      <p>{byline}</p>
+      <p>{date}</p>
+      <a href={link}>link</a>
     </div>
   );
 }
