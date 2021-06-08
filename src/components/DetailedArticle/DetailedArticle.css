@@ -3,6 +3,48 @@
  margin: 2% 0;
  align-self: center;
  width: 90%;
- background-color: green;
- height: 90%;
+ background-color:  whitesmoke;
+ height: 85%;
+ box-shadow: 0px 0px 5px gray;
+ border-radius: 5px;
+ display: flex;
+ flex-direction: column;
+ padding: 2%;
+}
+
+.close {
+  transform: scale(5);
+  color: black;
+  align-self: flex-start;
+}
+
+.details header {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  text-align: center;
+}
+
+.detail-content {
+  height: 80%;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  overflow: hidden;
+  text-align: center;
+} 
+
+.details i {
+  align-self: flex-end;
+  width: 50%;
+}
+
+.detail-content img {
+  grid-area: 1 / 2 / 2 / 3;
+  width: 100%;
+  overflow: hidden;
+}
+
+.detail-content p {
+  margin: 50px 20px;
+  font-size: 1.2em;
 }

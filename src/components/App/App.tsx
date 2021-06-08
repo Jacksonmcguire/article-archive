@@ -56,7 +56,7 @@ import './App.css';
           console.log(match.params.article)
           setCurrentStory(currentStories.find((story: Story) => story.title === match.params.article))
           
-          return <DetailedArticle story={currentStory}></DetailedArticle>
+          return <DetailedArticle story={currentStory}/>
         }}></Route>
       </div>
   );
