@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router';
-import { filterStories, getFeaturedStories, getTopStories, Story } from '../../utilities';
+import { filterStories, getFeaturedStories, getTopStories, Story, categories } from '../../utilities';
 import { ArticleContainer } from '../ArticleContainer/ArticleContainer';
 import DetailedArticle from '../DetailedArticle/DetailedArticle';
 import FeaturedArticle from '../FeaturedArticle/FeaturedArticle';
@@ -20,7 +20,7 @@ import './App.css';
 
   useEffect( () => {
     if (!currentStories.length) {
-      getTopStories('books')
+      getTopStories(categories[Math.floor(Math.random() * categories.length)])
       .then(data => {
         setCurrentStories(data.results)
         setCurrentList(data.results)
@@ -44,19 +44,15 @@ import './App.css';
 
   return (
       <div className="App">
-        <h1>Article Archive</h1>
         <section className="top">
-          <FeaturedArticle 
-          story={featuredStory}
-          ></FeaturedArticle>
-          <FilterForm filterByCategory={filterByCategory} filterBySearch={filterBySearch}></FilterForm>
+        <h1>Article Archive</h1>
+          <FilterForm filterByCategory={filterByCategory} filterBySearch={filterBySearch}
+          ></FilterForm>
         </section>
         <ArticleContainer articles={currentStories}></ArticleContainer>
         <Route path="/:article" render={({match}) => {
-          console.log(match.params.article)
-          setCurrentStory(currentStories.find((story: Story) => story.title === match.params.article))
-          
-          return <DetailedArticle story={currentStory}/>
+          const story = currentStories.find((story: Story) => story.title === match.params.article)
+          return <DetailedArticle story={story}/>
         }}></Route>
       </div>
   );
