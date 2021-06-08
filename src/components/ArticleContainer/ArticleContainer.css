@@ -3,5 +3,17 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-self: center;
-  grid-gap: 20px;
+  grid-gap: 30px;
 }
+
+@media screen and (max-width: 1250px) {
+ .articles {
+   grid-template-columns: repeat(3, 1fr);
+ } 
+}
+
+@media screen and (max-width: 500px) {
+  .articles {
+    grid-template-columns: 1fr;
+  } 
+ }

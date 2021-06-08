@@ -33,6 +33,12 @@
   text-align: center;
 } 
 
+.detail-content .link {
+  position: initial;
+  font-size: 2em;
+  cursor: pointer;
+}
+
 .details i {
   align-self: flex-end;
   width: 50%;
@@ -48,3 +54,19 @@
   margin: 50px 20px;
   font-size: 1.2em;
 }
+
+@media screen and (max-width: 1250px) {
+  .detail-content {
+    display: flex;
+    flex-flow: column;
+  }
+  .details i {
+    align-self: center;
+    width: 50%;
+  }
+ }
+
+ @media screen and (max-height: 500px) {
+ 
+  .detail-content img, .details i {display: none;}
+ }
