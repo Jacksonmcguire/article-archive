@@ -17,8 +17,19 @@ export interface Story {
   org_facet: string[];
   per_facet: string[];
   geo_facet: string[];
-  multimedia: object[];
+  multimedia: multimedia[];
   short_url: string;
+}
+
+type multimedia = {
+  caption: string
+  copyright: string
+  format: string
+  height: number
+  subtype: string
+  type: string
+  url: string
+  width: number
 }
 
 export const categories = ['arts', 'automobiles', 'books', 'business', 'fashion', 'food', 'health', 'home', 'insider', 'magazine', 'movies', 'nyregion', 'obituaries', 'opinion', 'politics', 'realestate', 'science', 'sports', 'sundayreview', 'technology', 'theater', 't-magazine', 'travel', 'upshot', 'us', 'world']
