@@ -15,8 +15,8 @@ function FilterForm({filterByCategory, filterBySearch}: FilterProps) {
   const [currentCategory, setCurrentCategory] = useState('')
   const [currentSearch, setCurrentSearch] = useState('')
 
-  const categoryOpts = categories.map(category => {
-    return <option>{category}</option>
+  const categoryOpts = categories.map((category) => {
+    return <option key={category}>{category}</option>
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
@@ -32,12 +32,12 @@ function FilterForm({filterByCategory, filterBySearch}: FilterProps) {
   return (
     <div className="filter-form">
       <form>
-        <select name="categories" onChange={handleChange}>
-          <option value="" disabled selected>Select a Category:</option>
+        <select name="categories" onChange={handleChange} value={currentCategory}>
+          <option value="" disabled>Select a Category:</option>
           {categoryOpts}
         </select>
         <input type="text" 
-        placeholder={`Search these ${currentCategory} articles`}
+        placeholder={`Search ${currentCategory} articles`}
         onChange={handleChange}/>
       </form>
     </div>

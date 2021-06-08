@@ -11,7 +11,6 @@ import './FeaturedArticle.css';
   story?: Story
 }
 function FeaturedArticle({story}: FeaturedProps) {
-  console.log(story)
   return (
     <div className="featured article">
       <h3>{story?.title}</h3>

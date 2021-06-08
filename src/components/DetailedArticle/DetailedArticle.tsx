@@ -3,6 +3,8 @@ import './DetailedArticle.css';
 import { Story } from '../../utilities'
 import { Link } from 'react-router-dom';
 import { AiOutlineClose } from "react-icons/ai";
+import { SiNewyorktimes } from 'react-icons/si'
+
 
 /**
  * Modal or main component that is displayed when an article is clicked
@@ -27,7 +29,7 @@ function DetailedArticle({story}: DetailedProps) {
           <p>
           {story?.abstract}
           </p>
-          <a href={story?.url}>Link to the article</a>
+          <a href={story?.url} className="link"><SiNewyorktimes/></a>
           <img src={story?.multimedia[0].url} alt="" />
         </article>
           <i>{story?.multimedia[0].caption}</i>
