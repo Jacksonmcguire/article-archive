@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { filterStories, getTopStories, Story } from '../../utilities';
+import { Route } from 'react-router';
+import { filterStories, getFeaturedStories, getTopStories, Story } from '../../utilities';
 import { ArticleContainer } from '../ArticleContainer/ArticleContainer';
+import DetailedArticle from '../DetailedArticle/DetailedArticle';
 import FeaturedArticle from '../FeaturedArticle/FeaturedArticle';
 import FilterForm from '../FilterForm/FilterForm';
 import './App.css';
@@ -14,6 +16,8 @@ import './App.css';
   const [currentStories, setCurrentStories] = useState([])
   const [currentList, setCurrentList] = useState([])
   const [featuredStory, setFeaturedStory] = useState() 
+  const [currentStory, setCurrentStory] = useState()
+
   useEffect( () => {
     if (!currentStories.length) {
       getTopStories('books')
@@ -21,6 +25,8 @@ import './App.css';
         setCurrentStories(data.results)
         setCurrentList(data.results)
       })
+      getFeaturedStories()
+      .then(data => setFeaturedStory(data.results[0]))
     }
   }, [currentStories])
   
@@ -37,14 +43,22 @@ import './App.css';
   }
 
   return (
-    <div className="App">
-      <section className="top">
-        <FeaturedArticle></FeaturedArticle>
-        <FilterForm filterByCategory={filterByCategory} filterBySearch={filterBySearch}></FilterForm>
+      <div className="App">
         <h1>Article Archive</h1>
-      </section>
-      <ArticleContainer articles={currentStories}></ArticleContainer>
-    </div>
+        <section className="top">
+          <FeaturedArticle 
+          story={featuredStory}
+          ></FeaturedArticle>
+          <FilterForm filterByCategory={filterByCategory} filterBySearch={filterBySearch}></FilterForm>
+        </section>
+        <ArticleContainer articles={currentStories}></ArticleContainer>
+        <Route path="/:article" render={({match}) => {
+          console.log(match.params.article)
+          setCurrentStory(currentStories.find((story: Story) => story.title === match.params.article))
+          
+          return <DetailedArticle story={currentStory}></DetailedArticle>
+        }}></Route>
+      </div>
   );
 }
 

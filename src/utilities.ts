@@ -35,3 +35,8 @@ export const getTopStories = (category: string):Promise<any> => {
   return fetch('https://api.nytimes.com/svc/topstories/v2/' + category + '.json?api-key=F059Cw09xTnYQt8mZGMY7utM5AAaO2LH')
   .then(res => res.json())
 }
+
+export const getFeaturedStories = () => {
+  return fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=F059Cw09xTnYQt8mZGMY7utM5AAaO2LH')
+  .then(res => res.json())
+}
