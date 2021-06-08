@@ -1,0 +1,8 @@
+.details {
+ position: fixed; 
+ margin: 2% 0;
+ align-self: center;
+ width: 90%;
+ background-color: green;
+ height: 90%;
+}
