@@ -22,7 +22,7 @@ function DetailedArticle({story}: DetailedProps) {
           <AiOutlineClose className="close"></AiOutlineClose>
         </Link>
         <header>
-          <h3>{story?.title}</h3>
+          <h3>{story?.title?  story.title : <Link to="/">Sorry we can't find what you're looking for, click me to go back home</Link>}</h3>
           <h4>{story?.byline} | {story?.published_date.split('T')[0].replaceAll('-', '/')}</h4>
         </header>
         <article className="detail-content">
