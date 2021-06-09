@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Article Archive
+[<img src="https://img.shields.io/badge/LinkedIn-jackson--mcguire-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0FBBD6"/>][linkedin1]
+[<img src="https://img.shields.io/badge/Github-jackson--mcguire-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github1]
+![React](https://camo.githubusercontent.com/4e4a3b5c3e9c00501ec866e2f2466c5a6032f838aca5f2cf3b14450e39e8a2f0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656163742532302d2532333230323332612e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d253233363144414642)
+![Cypress](https://img.shields.io/badge/cypress-04C38E.svg?&style=for-the-badge&logo=cypress&logoColor=white)
+![Node](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+## Summary
+ Article Archive is an app built for a mock take home challenge, that allows a user to view a list of articles, filter by category and search, as well as view more information about an article by clicking on it.
+## Setup
+1. Fork (optional) and clone down this repository to a directory of your choice
+2. <code>$ cd</code> into the repo
+3. Run <code>$ npm i</code> to install dependencies
+4. Run the command <code>$ npm start</code> to run the application in your browser
+5. Begin interacting [here](http://localhost:3000)
+## Testing
+1. After completing the Installation steps above and starting the server in your local browser:
+2. Run ```$npx cypress open``` from your terminal to open up the cypress client.
+3. Click on the ```article-test.ts``` to open up the live testing browser.
+## Future iterations
+* Build on search functionality so that it utilizes the NYT search API
+* Error handling for details modal
+* Featured Stories of the day carousel
+* Make completely responsive and accessible
+## Wireframes
+![](public/wireframes.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- -->
+[linkedin1]: https://www.linkedin.com/in/jackson-mcguire/
+[github1]: https://github.com/Jacksonmcguire
