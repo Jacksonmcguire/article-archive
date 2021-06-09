@@ -44,10 +44,17 @@ export const filterStories = (story: Story, search: string) => {
 
 export const getTopStories = (category: string):Promise<any> => {
   return fetch('https://api.nytimes.com/svc/topstories/v2/' + category + '.json?api-key=F059Cw09xTnYQt8mZGMY7utM5AAaO2LH')
-  .then(res => res.json())
+  .then(res => checkForErrors(res))
 }
 
 export const getFeaturedStories = () => {
   return fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=F059Cw09xTnYQt8mZGMY7utM5AAaO2LH')
-  .then(res => res.json())
+  .then(res => checkForErrors(res))
+}
+const checkForErrors = (response: Response) => {
+  if(!response.ok) {
+    throw new Error(`${response.status}`)
+  } else {
+    return response.json()
+  }
 }

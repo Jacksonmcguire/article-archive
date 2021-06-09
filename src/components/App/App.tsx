@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router';
-import { filterStories, getFeaturedStories, getTopStories, Story, categories } from '../../utilities';
+import { filterStories, getTopStories, Story, categories } from '../../utilities';
 import { ArticleContainer } from '../ArticleContainer/ArticleContainer';
 import DetailedArticle from '../DetailedArticle/DetailedArticle';
-import FeaturedArticle from '../FeaturedArticle/FeaturedArticle';
 import FilterForm from '../FilterForm/FilterForm';
 import './App.css';
 /**
@@ -15,18 +14,15 @@ import './App.css';
  function App() {
   const [currentStories, setCurrentStories] = useState([])
   const [currentList, setCurrentList] = useState([])
-  const [featuredStory, setFeaturedStory] = useState() 
   const [currentStory, setCurrentStory] = useState()
 
-  useEffect( () => {
+  useEffect(() => {
     if (!currentStories.length) {
-      getTopStories(categories[Math.floor(Math.random() * categories.length)])
+      getTopStories(categories[0])
       .then(data => {
         setCurrentStories(data.results)
         setCurrentList(data.results)
       })
-      getFeaturedStories()
-      .then(data => setFeaturedStory(data.results[0]))
     }
   }, [currentStories])
   
