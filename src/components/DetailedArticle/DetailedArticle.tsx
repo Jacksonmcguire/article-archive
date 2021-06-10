@@ -29,7 +29,7 @@ function DetailedArticle({story}: DetailedProps) {
           <p>
           {story?.abstract}
           </p>
-          <a href={story?.url} className="link"><SiNewyorktimes/></a>
+          {story && <a href={story?.url} className="link">View the full article</a>}
           <img src={story?.multimedia[0].url} alt="" />
         </article>
           <i>{story?.multimedia[0].caption}</i>

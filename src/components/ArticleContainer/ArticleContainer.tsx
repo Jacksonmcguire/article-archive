@@ -14,7 +14,7 @@ export const ArticleContainer = ({articles}:any) => {
   
   return (
     <section className="articles">
-      {articleCards}
+      {articles.length > 0 ? articleCards : <p>Sorry we couldn't find any matching articles</p>}
     </section>
   )
 }
