@@ -46,4 +46,17 @@ describe('Article Archive', () => {
     cy.get('a').first().click()
     cy.get('.details').should('not.exist')
   })
+
+  it('should show an apology message if there are no matching search results', () => {
+    cy.get('input').type('help me im lost').should('have.value', 'help me im lost')
+    cy.get('.articles').should('contain.text', 'Sorry we couldn\'t find any matching articles')
+  })
+
+  it('should show an apology message if the default cards are unable to be fetched', () => {
+      cy.intercept('https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=F059Cw09xTnYQt8mZGMY7utM5AAaO2LH', {
+          statusCode: 400,
+        })
+      cy.visit('http://localhost:3000')
+      cy.get('.articles').should('contain.text', 'Sorry we couldn\'t find any matching articles')
+  })
 })
