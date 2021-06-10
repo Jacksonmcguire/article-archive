@@ -23,8 +23,9 @@ import './App.css';
         setCurrentStories(data.results)
         setCurrentList(data.results)
       })
+      .catch(err => alert(err.message))
     }
-  }, [currentStories])
+  }, [currentList])
   
   const filterByCategory = (cat: string): void => {
     getTopStories(cat)
@@ -32,6 +33,7 @@ import './App.css';
       setCurrentStories(data.results)
       setCurrentList(data.results)
     })
+    .catch(err => alert(err.message))
   }
 
   const filterBySearch = (term: string):void => {
